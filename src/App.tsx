@@ -1,36 +1,20 @@
-import { useState } from 'react'
-import React from "react"
-import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg' 
-import './App.css'
+import React from "react";
+import CreateRoom from "./components/CreateRoom";
+import JoinRoom from "./components/JoinRoom";
 
-function App() {
-  const [count, setCount] = useState(0)
+export const App = () => {
+  // Vous pouvez ajouter un router ici si vous préférez utiliser des routes
+  // Pour cet exemple, nous allons simplement alterner les composants pour simplifier
 
   return (
-    <>
+    <div style={{display: "flex", flexDirection:"column", height:"100vh"}}>
+      <h1>Loup Garou</h1>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          {/* <img src={viteLogo} className="logo" alt="Vite logo" /> */}
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <CreateRoom />
+      <JoinRoom />
+      {/* Supposons que RoomID est obtenu via un état ou des props */}
+      {/* <Room roomId="1234" /> */}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
-
-export default App
